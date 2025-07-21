@@ -9,12 +9,20 @@
     <button id="triggerButton">Create Dated File in Repo</button>
 
     <script>
-        document.getElementById('triggerButton').addEventListener('click', () => {
-            // This is a placeholder for the webhook trigger.
-            // In a real application, this would be a request to a server-side
-            // component that would then make the request to the GitHub API
-            // to trigger the repository_dispatch event.
-            alert("This button is a placeholder. See the README for instructions on how to trigger the webhook.");
+        document.getElementById('triggerButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/trigger-action', {
+                    method: 'POST',
+                });
+                if (response.ok) {
+                    alert('Successfully triggered the GitHub Action!');
+                } else {
+                    const data = await response.json();
+                    alert(`Error: ${data.error}`);
+                }
+            } catch (error) {
+                alert(`An error occurred: ${error.message}`);
+            }
         });
     </script>
 </body>

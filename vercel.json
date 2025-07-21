@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/trigger-action.js": {
+      "memory": 128
+    }
+  }
+}
