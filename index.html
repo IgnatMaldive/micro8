@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigger GitHub Action</title>
+</head>
+<body>
+    <button id="triggerButton">Create Dated File in Repo</button>
+
+    <script>
+        document.getElementById('triggerButton').addEventListener('click', () => {
+            // This is a placeholder for the webhook trigger.
+            // In a real application, this would be a request to a server-side
+            // component that would then make the request to the GitHub API
+            // to trigger the repository_dispatch event.
+            alert("This button is a placeholder. See the README for instructions on how to trigger the webhook.");
+        });
+    </script>
+</body>
+</html>
